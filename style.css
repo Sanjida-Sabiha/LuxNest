@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 5px;
+      outline: none;
+      position: absolute;
+      pointer-events: none;
+    }
+    .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #059669;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    top: 14px;
+    z-index: 3;
+    }
+
+    .range::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #059669;
+    cursor: pointer;
+    position: relative;
+    top: 14px;
+    z-index: 3;
+    }
+
+    /* ধূসর লাইন */
+    #sliderTrack {
+      position: absolute;
+      height: 4px;
+      border-radius: 5px;
+      background: #d1d5db; /* gray-300 */
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+    /* সবুজ লাইন */
+    #sliderRange {
+      position: absolute;
+      height: 4px;
+      border-radius: 5px;
+      background: #059669; /* green */
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+
+
+
+/* Default pagination bullet */
+    .swiper-pagination .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background: #9ca3af; /* gray-400 */
+      border-radius: 50%;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Active pagination bullet */
+    .swiper-pagination .swiper-pagination-bullet-active {
+      width: 24px;
+      height: 8px;
+      border-radius: 9999px; /* full rounded */
+      background: #0d9488; /* teal-600 */
+    }
+
+
+  .custom-pagination, .custom-paginations{
+    position: static !important;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+    .custom-pagination span, .custom-paginations span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #9ca3af; /* gray */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .custom-pagination span.active {
+    width: 60px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #0d9488; /* teal */
+  }
+
+  .custom-paginations span.active {
+    width: 60px;
+    height: 8px;
+    border-radius: 9999px;
+    background: white; /* teal */
+  }
+
+
+
+  /* Main image styling */
+  #mainImage {
+    width: 100%;
+    max-width: 626px;
+    height: auto;
+    aspect-ratio: 1/1; /* 1:1 ratio রাখবে */
+    object-fit: cover; /* ছবিকে crop করে fill করবে */
+    border-radius: 10px; /* চাইলে কোণগুলো গোল করা যাবে */
+    display: block;
+  }
+
+  /* Thumbnail styling */
+  .thumbnail {
+    width: 145px;
+    height: 145px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  .thumbnail:hover{
+    border: 2px solid black;
+  }
+
+  /* Responsive layout */
+  @media (max-width: 1024px) {
+    #mainImage {
+      max-width: 100%;
+      height: auto;
+    }
+    .thumbnail {
+      width: 108px;
+      height: 108px;
+    }
+  }
+  /* Responsive layout */
+  @media (max-width: 1022px) {
+    #mainImage {
+      max-width: 100%;
+      height: auto;
+    }
+    .thumbnail {
+      width: 195px;
+      height: 153px;
+    }
+  }
+  @media (max-width: 640px) {
+    #mainImage {
+      max-width: 100%;
+      height: auto;
+    }
+    .thumbnail {
+      width: 79px;
+      height: 79px;
+    }
+  }

@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxNest</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header Area Start Here -->
+    <header class="py-5 border-b border-borderColor">
+        <div class="container">
+            <nav>
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="flex justify-between items-center">
+                    <div>
+                        <a href="index.html">
+                            <img src="assets/img/logo.svg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="lg:block hidden">
+                        <ul class="flex items-center gap-8">
+                            <li class="group relative w-max">
+                                <a href="index.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="about.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">About Us</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="listings.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Listings</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="agents.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Agents</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="py-1.5 group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" onclick="event.preventDefault()" class="inline-flex items-center text-base font-Geist font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Pages
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="shadow-xl absolute left-0 top-9 w-52 py-2 list-none bg-white rounded-md hidden z-10 group-hover:block border border-borderColor" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items (fixed like Home/About style) -->
+                                    <li class="relative w-max">
+                                        <a href="listings-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Listings Details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="agents-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Agents details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="blog.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Blog Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="blog-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Blog details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="faq.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            FAQ
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="contact.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Contact
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="404.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            404 Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+                                </ul>
+                            </li>   
+                        </ul>
+                    </div>
+
+                    <!-- Menu button for mobile -->
+                    <div class="flex items-center lg:hidden sm:block">
+                        <button id="mobileMenuButton" class="focus:outline-none">
+                            
+
+                            
+                            <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+
+                                <!-- Open Icon (3 lines) -->
+                                <path id="menuOpenIcon" d="M4 5H20 M4 12H20 M4 19H20"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                <!-- Close Icon (X) -->
+                                <path id="menuCloseIcon" class="hidden"
+                                    d="M6 18L18 6M6 6l12 12"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <div class="lg:flex gap-3 hidden">
+                        <a href="sign-in.html" class="font-Geist py-3 px-6 rounded-xl border border-borderColor font-medium text-base leading-6 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Log in</a>
+                        <a href="sign-up.html" class="font-Geist py-3 px-6 rounded-xl border border-greenColor bg-greenColor font-medium text-base leading-6 text-white transition ease-in-out duration-500 hover:bg-promoBg hover:border-promoBg">Sign up</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="border border-borderColor bg-white shadow-btn hidden rounded-lg my-2 mx-4 py-7 transition-height transition-all duration-1000 ease-in-out overflow-hidden absolute inset-x-0 top-[75px] z-[999]">
+                    <div class="">
+                        <ul class="dropdown flex flex-col gap-y-5 px-5">
+                            <li class="group relative w-max">
+                                <a href="index.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="about.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">About Us</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="listings.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Listings</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="agents.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Agents</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class=" group relative">
+                                <!-- Icon added here for the mobile menu -->
+                                <a href="javascript:void(0);" id="mobileFeaturesToggle" class=" pb-5 flex justify-between text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500 items-center">
+                                    Pages
+                                    <svg id="mobileDropdownIcon" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                                <ul id="mobileDropdownMenu" class="hidden bg-bg mb-5 rounded-md shadow-2xl bg-white">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="listings-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Listings Details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="agents-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Agents details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:flex block text-center justify-center mt-7 lg:hidden px-4">
+                        <a href="sign-in.html" class="md:inline-block block md:mr-3 font-Geist py-3 px-6 rounded-xl border border-borderColor font-medium text-base leading-6 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Log in</a>
+                        <a href="sign-up.html" class="md:mt-0 mt-4 md:inline-block block font-Geist py-3 px-6 rounded-xl border border-greenColor bg-greenColor font-medium text-base leading-6 text-white transition ease-in-out duration-500 hover:bg-promoBg hover:border-promoBg hover:text-primaryColor">Sign up</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Area End Here -->
+
+    <!-- Banner Area Start Here -->
+    <section>
+        <div class="container">
+            <div class="md:pt-20 pt-7">
+                <div class="flex lg:flex-row flex-col justify-between items-center">
+                    <h1 class="lg:w-735 w-full font-Geist font-normal md:text-80xl text-40xl leading-[50px] md:leading-90 text-primaryColor">Find your dream home today</h1>
+                    <p class="lg:w-408 w-full lg:pt-0 pt-2 md:text-lg text-base leading-6 md:leading-7 text-secondaryColor font-Geist font-normal">Explore top-rated properties in your desired location — homes, apartments, and commercial spaces tailored for your lifestyle.</p>
+                </div>
+                
+            </div>
+        </div>
+        <div
+            data-aos="zoom-in"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+        class="relative w-full left-0 md:mt-[60px] mt-10 md:h-[690px] h-[390px] top-0 bg-cover bg-center bg-no-repeat md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px] " style="background-image: url('assets/img/homePage/img-1.png');">
+            <div class="absolute xl:w-[1280px] w-full max-w-[calc(100%-20px)] mx-auto rounded-2xl p-4 md:bottom-7 bottom-4 left-0 right-0 bg-white">
+                <div class="flex md:flex-row flex-col xl:flex-wrap lg:flex-nowrap flex-wrap md:items-center gap-7">
+                    <div class="flex gap-3 w-[322px]">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="60" height="60" rx="12" fill="#F6F6F6"/>
+                            <path d="M34.6668 28.6667C34.6668 31.244 32.5775 33.3333 30.0002 33.3333C27.4228 33.3333 25.3335 31.244 25.3335 28.6667C25.3335 26.0893 27.4228 24 30.0002 24C32.5775 24 34.6668 26.0893 34.6668 28.6667Z" stroke="#141B34" stroke-width="2"/>
+                            <path d="M30 16.6667C36.4941 16.6667 42 22.044 42 28.5678C42 35.1954 36.4044 39.8463 31.236 43.009C30.8593 43.2216 30.4333 43.3334 30 43.3334C29.5667 43.3334 29.1407 43.2216 28.764 43.009C23.6052 39.8155 18 35.2183 18 28.5678C18 22.044 23.5059 16.6667 30 16.6667Z" stroke="#141B34" stroke-width="2"/>
+                        </svg>
+                        <form action="">
+                            <label for="" class="block font-Geist font-medium text-lg leading-7 text-primaryColor">Location</label>    
+                            <input type="text" class="focus:outline-none pt-1 block text-secondaryColor font-normal text-base" placeholder="Search location">
+                        </form>
+                    </div>
+
+                    <hr class="w-[1px] h-7 bg-[#E0E0E0] md:block hidden"/>
+                    <div class="flex gap-3 w-[322px]">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="60" height="60" rx="12" fill="#F6F6F6"/>
+                            <path d="M17.3335 30C17.3335 24.3603 17.3335 21.5405 18.9308 19.6703C19.1576 19.4048 19.4049 19.1574 19.6705 18.9306C21.5407 17.3333 24.3605 17.3333 30.0002 17.3333C35.6398 17.3333 38.4596 17.3333 40.3298 18.9306C40.5954 19.1574 40.8427 19.4048 41.0695 19.6703C42.6668 21.5405 42.6668 24.3603 42.6668 30C42.6668 35.6396 42.6668 38.4594 41.0695 40.3296C40.8427 40.5952 40.5954 40.8425 40.3298 41.0693C38.4596 42.6666 35.6398 42.6666 30.0002 42.6666C24.3605 42.6666 21.5407 42.6666 19.6705 41.0693C19.4049 40.8425 19.1576 40.5952 18.9308 40.3296C17.3335 38.4594 17.3335 35.6396 17.3335 30Z" stroke="#141B34" stroke-width="2"/>
+                            <path d="M33.6134 27.4148C33.4813 26.3979 32.3137 24.755 30.2142 24.7549C27.7748 24.7549 26.7483 26.106 26.54 26.7815C26.2151 27.6851 26.2801 29.5428 29.1394 29.7453C32.7137 29.9987 34.1456 30.4205 33.9634 32.608C33.7812 34.7953 31.7888 35.268 30.2142 35.2172C28.6396 35.1667 26.0634 34.4433 25.9634 32.4977M29.9644 23.3307V24.7598M29.9644 35.2041V36.664" stroke="#141B34" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <form action="">
+                            <label for="" class="block font-Geist font-medium text-lg leading-7 text-primaryColor">Price</label>    
+                            <input type="text" class="focus:outline-none pt-1 block text-secondaryColor font-normal text-base" placeholder="Ex. $10,000">
+                        </form>
+                    </div>
+                    <hr class="w-[1px] h-7 bg-[#E0E0E0] lg:block hidden"/>
+                    <div class="flex gap-3 w-[322px]">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="60" height="60" rx="12" fill="#F6F6F6"/>
+                            <path d="M43.3332 28L31.1765 17.7627C30.8472 17.4854 30.4304 17.3333 29.9998 17.3333C29.5693 17.3333 29.1525 17.4854 28.8232 17.7627L16.6665 28" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M41.3332 20.6667V34.6667C41.3332 38.4379 41.3332 40.3235 40.1616 41.4951C38.99 42.6667 37.1044 42.6667 33.3332 42.6667H26.6665C22.8953 42.6667 21.0097 42.6667 19.8381 41.4951C18.6665 40.3235 18.6665 38.4379 18.6665 34.6667V26.6667" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M34 42.6667V36C34 34.1144 34 33.1716 33.4143 32.5857C32.8284 32 31.8856 32 30 32C28.1144 32 27.1716 32 26.5858 32.5857C26 33.1716 26 34.1144 26 36V42.6667" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-Geist font-medium text-lg leading-7 text-primaryColor">Type</h4>
+                            <div class="relative inline-block text-left">
+                                <!-- Trigger -->
+                                <button id="dropdownBtn"
+                                    class="pt-1 flex items-center w-48 font-Geist text-base font-normal text-secondaryColor">
+                                    Choose type
+                                    <svg id="dropdownIcon" class="ml-2 transition-transform duration-200"
+                                    width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.8334 1.08331L7.00008 6.91665L1.16675 1.08331"
+                                        stroke="#535353" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+
+                                <!-- Dropdown menu -->
+                                <div id="dropdownMenu"
+                                    class="hidden absolute mt-2 w-[120px] bg-white border rounded-lg shadow-lg z-10">
+                                    <a href="#" class="block px-4 py-2 font-Geist font-normal text-base leading-6 text-secondaryColor hover:text-primaryColor">Option 1</a>
+                                    <a href="#" class="block px-4 py-2 font-Geist font-normal text-base leading-6 text-secondaryColor hover:text-primaryColor">Option 2</a>
+                                    <a href="#" class="block px-4 py-2 font-Geist font-normal text-base leading-6 text-secondaryColor hover:text-primaryColor">Option 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#" class="text-center md:inline-block block md:w-auto w-full py-4 px-10 bg-greenColor font-Geist font-medium text-lg leading-7 text-white rounded-xl transition ease-in-out duration-500 hover:bg-promoBg">Search</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Area End Here -->
+
+
+    <!-- About Area Start Here -->
+    <section class="lg:mt-[120px] md:mt-20 mt-10">
+        <div class="container">
+            <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="flex md:flex-row flex-col justify-between items-start gap-7">
+                <div class="md:w-408 w-full">
+                    <span class="font-Geist font-normal text-lg leading-[58px] text-secondaryColor">About us</span>
+                </div>
+                <div class="md:w-844 w-full">
+                    <h2 class="font-Geist font-normal md:text-48xl text-30xl leading-40 md:leading-56 text-primaryColor tracking-[-0.03em]">Where expertise meets your dream property goals</h2>
+
+                    <p class="font-Geist font-normal md:text-lg text-base leading-6 md:leading-7 text-secondaryColor pt-4">We are a leading real estate agency with over 10 years of trusted service, dedicated to helping individuals, families, and investors confidently navigate the property market. Whether you're buying your first home, selling a property, or exploring investment opportunities, our experienced agents and innovative technology make the process smooth, transparent, and stress-free.
+                        <br/>
+                        <br/>
+                        Backed by thousands of successful transactions, we blend deep market knowledge with a personalized approach—ensuring every client receives expert guidance tailored to their unique needs.</p>
+                </div>
+            </div>
+
+            <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 md:mt-[60px] mt-7">
+                <div class="bg-cardbg p-7 rounded-2xl">
+                    <h4 class="font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 text-primaryColor -tracking-[0.03em]">10+ Years</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-1">of industry experience</p>
+                    <p class="pt-7 font-Geist font-normal text-base leading-6 text-secondaryColor">Proven expertise in residential, commercial, and investment real estate.</p>
+                </div>
+
+                <div class="bg-cardbg p-7 rounded-2xl">
+                    <h4 class="font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 text-primaryColor -tracking-[0.03em]">Thousands</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-1">of properties sold or bought</p>
+                    <p class="pt-7 font-Geist font-normal text-base leading-6 text-secondaryColor">A track record of success across diverse property types and locations.</p>
+                </div>
+
+                <div class="bg-cardbg p-7 rounded-2xl">
+                    <h4 class="font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 text-primaryColor -tracking-[0.03em]">Dedicated</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-1">personalized support for you</p>
+                    <p class="pt-7 font-Geist font-normal text-base leading-6 text-secondaryColor">One-on-one guidance from our friendly agents—every step of the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Area End Here -->
+
+    <!-- Client Area Start Here -->
+    <section class="lg:mt-[120px] md:mt-20 mt-10">
+        <div class="container">
+            <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="lg:w-626 w-full mx-auto text-center">
+                <h4 class="font-Geist font-normal md:text-48xl text-32xl leading-42 md:leading-56 text-primaryColor -tracking-[0.03em]">Why clients trust us</h4>
+                <p class="pt-5 font-Geist font-normal text-lg leading-7 text-secondaryColor">We’ve earned the trust of thousands by delivering reliable service, transparent information, and expert support.</p>
+            </div> 
+            <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="md:mt-[60px] mt-7 md:grid md:grid-cols-2 grid-cols-1 hidden">
+                <div class="text-center p-12 border-e md:border-b border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.3209 15.0334C39.4168 16.9586 39.4168 19.2489 39.4168 22C39.4168 30.2103 39.4168 34.3155 36.8663 36.8662C34.3156 39.4167 30.2104 39.4167 22.0002 39.4167C13.7899 39.4167 9.68473 39.4167 7.1341 36.8662C4.5835 34.3155 4.5835 30.2103 4.5835 22C4.5835 13.7898 4.5835 9.68461 7.1341 7.13398C9.68473 4.58337 13.7899 4.58337 22.0002 4.58337C23.9653 4.58337 25.6954 4.58337 27.2252 4.61835" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M14.6665 21.0834C14.6665 21.0834 17.4165 21.0834 21.0832 27.5C21.0832 27.5 30.3576 10.6945 39.4165 7.33337" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Verified listings</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Every property on our platform is 100% authentic, regularly updated, and thoroughly vetted—so you can search with confidence.</p>
+                </div>
+
+                <div class="text-center p-12 border-b border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.1667 21.6416C31.1667 21.0078 31.1667 20.691 31.2621 20.4087C31.5393 19.5881 32.27 19.2698 33.0021 18.9364C33.8251 18.5614 34.2365 18.3741 34.6442 18.3411C35.1071 18.3036 35.5708 18.4034 35.9664 18.6254C36.4909 18.9197 36.8567 19.479 37.2312 19.9339C38.9608 22.0345 39.8254 23.085 40.1418 24.2433C40.3972 25.1779 40.3972 26.1555 40.1418 27.0901C39.6804 28.7795 38.2223 30.1958 37.143 31.5066C36.591 32.1771 36.3149 32.5124 35.9664 32.708C35.5708 32.93 35.1071 33.0297 34.6442 32.9923C34.2365 32.9593 33.8251 32.772 33.0021 32.3971C32.27 32.0636 31.5393 31.7453 31.2621 30.9247C31.1667 30.6424 31.1667 30.3256 31.1667 29.6918V21.6416Z" stroke="white" stroke-width="2.5"/>
+                            <path d="M12.8332 21.6418C12.8332 20.8439 12.8108 20.1267 12.1657 19.5657C11.931 19.3616 11.62 19.2199 10.9978 18.9365C10.1749 18.5618 9.76336 18.3744 9.35563 18.3414C8.13234 18.2424 7.47419 19.0773 6.76874 19.9342C5.03921 22.0348 4.17445 23.0851 3.85801 24.2434C3.60267 25.1783 3.60267 26.1558 3.85801 27.0904C4.31954 28.7798 5.77762 30.1959 6.85689 31.5069C7.5372 32.3332 8.18708 33.0871 9.35563 32.9927C9.76336 32.9597 10.1749 32.7721 10.9978 32.3974C11.62 32.1139 11.931 31.9722 12.1657 31.7682C12.8108 31.2072 12.8332 30.4902 12.8332 29.6921V21.6418Z" stroke="white" stroke-width="2.5"/>
+                            <path d="M36.6668 19.25V16.5C36.6668 9.41231 30.1004 3.66663 22.0002 3.66663C13.9 3.66663 7.3335 9.41231 7.3335 16.5V19.25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M36.6667 32.0834C36.6667 40.3334 29.3333 40.3334 22 40.3334" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Expert guidance</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Our experienced agents offer end-to-end support—from property search and site visits to negotiation and closing.</p>
+                </div>
+
+                <div class="text-center p-12 border-e border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">    
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38.3949 30.8648C37.1917 23.6254 33.4459 18.2345 30.1895 15.0681C29.2418 14.1467 28.7681 13.686 27.7215 13.2596C26.6748 12.8333 25.7752 12.8333 23.976 12.8333H20.024C18.2248 12.8333 17.3252 12.8333 16.2786 13.2596C15.232 13.686 14.7582 14.1467 13.8106 15.0681C10.5542 18.2345 6.80828 23.6254 5.60499 30.8648C4.7097 36.2512 9.67866 40.3333 15.2319 40.3333H28.7681C34.3213 40.3333 39.2903 36.2512 38.3949 30.8648Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.304 8.14534C12.9257 7.59481 12.3775 6.84756 13.51 6.67717C14.674 6.50202 15.8827 7.29884 17.0658 7.28247C18.1362 7.26765 18.6815 6.79293 19.2665 6.11513C19.8825 5.40139 20.8364 3.66675 22.0002 3.66675C23.164 3.66675 24.1178 5.40139 24.7338 6.11513C25.3189 6.79293 25.8641 7.26765 26.9344 7.28247C28.1176 7.29884 29.3263 6.50202 30.4903 6.67717C31.6228 6.84756 31.0746 7.59481 30.6964 8.14534L28.9861 10.6346C28.2546 11.6994 27.8888 12.2318 27.1232 12.5326C26.3578 12.8334 25.3685 12.8334 23.3902 12.8334H20.6101C18.6318 12.8334 17.6425 12.8334 16.877 12.5326C16.1115 12.2318 15.7457 11.6994 15.0142 10.6346L13.304 8.14534Z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                            <path d="M24.9821 23.6841C24.5858 22.221 22.5684 20.9006 20.1467 21.8884C17.725 22.876 17.3404 26.0541 21.0034 26.3918C22.6589 26.5443 23.7384 26.2147 24.7266 27.1473C25.7149 28.0797 25.8984 30.6732 23.3721 31.372C20.8458 32.0709 18.3442 30.979 18.0718 29.4282M21.7096 20.1533V21.5474M21.7096 31.5871V32.9867" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Flexible budget options</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">We cater to all price ranges with a wide variety of homes, whether you're a first-time buyer or a seasoned investor.</p>
+                </div>
+
+                <div class="text-center p-12">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">                   
+                        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.81842 19.2349H6.97699C4.25682 19.2349 2.89672 19.2349 2.31699 18.3381C1.73725 17.4414 2.28963 16.192 3.3944 13.6932L6.71574 6.18092C7.7202 3.909 8.22245 2.77303 9.19677 2.13651C10.1711 1.5 11.4076 1.5 13.881 1.5H17.7116C20.716 1.5 22.2183 1.5 22.7848 2.48148C23.3514 3.46295 22.6062 4.77411 21.1155 7.39642L19.1504 10.8534C18.4093 12.1571 18.0388 12.8089 18.0439 13.3425C18.0507 14.0359 18.4194 14.6747 19.0151 15.0245C19.4734 15.2938 20.2201 15.2938 21.7137 15.2938C23.6019 15.2938 24.546 15.2938 25.0377 15.6207C25.6765 16.0453 26.0109 16.805 25.8937 17.5659C25.8035 18.1514 25.1685 18.8536 23.8983 20.2581L13.7506 31.4792C11.7574 33.6833 10.7608 34.7853 10.0916 34.4366C9.42238 34.0877 9.74377 32.634 10.3865 29.7264L11.6456 24.0309C12.1349 21.817 12.3797 20.71 11.7912 19.9725C11.2027 19.2349 10.0746 19.2349 7.81842 19.2349Z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Fast & secure transactions</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Our streamlined process and digital tools help close deals quickly and securely—saving you time and stress.</p>
+                </div>
+            </div>
+
+            <div class="md:mt-[60px] mt-7 grid md:grid-cols-2 grid-cols-1 gap-4 md:hidden">
+                <div class="text-center p-12 border border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.3209 15.0334C39.4168 16.9586 39.4168 19.2489 39.4168 22C39.4168 30.2103 39.4168 34.3155 36.8663 36.8662C34.3156 39.4167 30.2104 39.4167 22.0002 39.4167C13.7899 39.4167 9.68473 39.4167 7.1341 36.8662C4.5835 34.3155 4.5835 30.2103 4.5835 22C4.5835 13.7898 4.5835 9.68461 7.1341 7.13398C9.68473 4.58337 13.7899 4.58337 22.0002 4.58337C23.9653 4.58337 25.6954 4.58337 27.2252 4.61835" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M14.6665 21.0834C14.6665 21.0834 17.4165 21.0834 21.0832 27.5C21.0832 27.5 30.3576 10.6945 39.4165 7.33337" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Verified listings</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Every property on our platform is 100% authentic, regularly updated, and thoroughly vetted—so you can search with confidence.</p>
+                </div>
+
+                <div class="text-center p-12 border border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.1667 21.6416C31.1667 21.0078 31.1667 20.691 31.2621 20.4087C31.5393 19.5881 32.27 19.2698 33.0021 18.9364C33.8251 18.5614 34.2365 18.3741 34.6442 18.3411C35.1071 18.3036 35.5708 18.4034 35.9664 18.6254C36.4909 18.9197 36.8567 19.479 37.2312 19.9339C38.9608 22.0345 39.8254 23.085 40.1418 24.2433C40.3972 25.1779 40.3972 26.1555 40.1418 27.0901C39.6804 28.7795 38.2223 30.1958 37.143 31.5066C36.591 32.1771 36.3149 32.5124 35.9664 32.708C35.5708 32.93 35.1071 33.0297 34.6442 32.9923C34.2365 32.9593 33.8251 32.772 33.0021 32.3971C32.27 32.0636 31.5393 31.7453 31.2621 30.9247C31.1667 30.6424 31.1667 30.3256 31.1667 29.6918V21.6416Z" stroke="white" stroke-width="2.5"/>
+                            <path d="M12.8332 21.6418C12.8332 20.8439 12.8108 20.1267 12.1657 19.5657C11.931 19.3616 11.62 19.2199 10.9978 18.9365C10.1749 18.5618 9.76336 18.3744 9.35563 18.3414C8.13234 18.2424 7.47419 19.0773 6.76874 19.9342C5.03921 22.0348 4.17445 23.0851 3.85801 24.2434C3.60267 25.1783 3.60267 26.1558 3.85801 27.0904C4.31954 28.7798 5.77762 30.1959 6.85689 31.5069C7.5372 32.3332 8.18708 33.0871 9.35563 32.9927C9.76336 32.9597 10.1749 32.7721 10.9978 32.3974C11.62 32.1139 11.931 31.9722 12.1657 31.7682C12.8108 31.2072 12.8332 30.4902 12.8332 29.6921V21.6418Z" stroke="white" stroke-width="2.5"/>
+                            <path d="M36.6668 19.25V16.5C36.6668 9.41231 30.1004 3.66663 22.0002 3.66663C13.9 3.66663 7.3335 9.41231 7.3335 16.5V19.25" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M36.6667 32.0834C36.6667 40.3334 29.3333 40.3334 22 40.3334" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Expert guidance</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Our experienced agents offer end-to-end support—from property search and site visits to negotiation and closing.</p>
+                </div>
+
+                <div class="text-center p-12 border border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">    
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38.3949 30.8648C37.1917 23.6254 33.4459 18.2345 30.1895 15.0681C29.2418 14.1467 28.7681 13.686 27.7215 13.2596C26.6748 12.8333 25.7752 12.8333 23.976 12.8333H20.024C18.2248 12.8333 17.3252 12.8333 16.2786 13.2596C15.232 13.686 14.7582 14.1467 13.8106 15.0681C10.5542 18.2345 6.80828 23.6254 5.60499 30.8648C4.7097 36.2512 9.67866 40.3333 15.2319 40.3333H28.7681C34.3213 40.3333 39.2903 36.2512 38.3949 30.8648Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.304 8.14534C12.9257 7.59481 12.3775 6.84756 13.51 6.67717C14.674 6.50202 15.8827 7.29884 17.0658 7.28247C18.1362 7.26765 18.6815 6.79293 19.2665 6.11513C19.8825 5.40139 20.8364 3.66675 22.0002 3.66675C23.164 3.66675 24.1178 5.40139 24.7338 6.11513C25.3189 6.79293 25.8641 7.26765 26.9344 7.28247C28.1176 7.29884 29.3263 6.50202 30.4903 6.67717C31.6228 6.84756 31.0746 7.59481 30.6964 8.14534L28.9861 10.6346C28.2546 11.6994 27.8888 12.2318 27.1232 12.5326C26.3578 12.8334 25.3685 12.8334 23.3902 12.8334H20.6101C18.6318 12.8334 17.6425 12.8334 16.877 12.5326C16.1115 12.2318 15.7457 11.6994 15.0142 10.6346L13.304 8.14534Z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                            <path d="M24.9821 23.6841C24.5858 22.221 22.5684 20.9006 20.1467 21.8884C17.725 22.876 17.3404 26.0541 21.0034 26.3918C22.6589 26.5443 23.7384 26.2147 24.7266 27.1473C25.7149 28.0797 25.8984 30.6732 23.3721 31.372C20.8458 32.0709 18.3442 30.979 18.0718 29.4282M21.7096 20.1533V21.5474M21.7096 31.5871V32.9867" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Flexible budget options</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">We cater to all price ranges with a wide variety of homes, whether you're a first-time buyer or a seasoned investor.</p>
+                </div>
+
+                <div class="text-center p-12 border border-borderColor">
+                    <div class="w-20 h-20 rounded-xl bg-greenColor flex justify-center items-center mx-auto">                   
+                        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.81842 19.2349H6.97699C4.25682 19.2349 2.89672 19.2349 2.31699 18.3381C1.73725 17.4414 2.28963 16.192 3.3944 13.6932L6.71574 6.18092C7.7202 3.909 8.22245 2.77303 9.19677 2.13651C10.1711 1.5 11.4076 1.5 13.881 1.5H17.7116C20.716 1.5 22.2183 1.5 22.7848 2.48148C23.3514 3.46295 22.6062 4.77411 21.1155 7.39642L19.1504 10.8534C18.4093 12.1571 18.0388 12.8089 18.0439 13.3425C18.0507 14.0359 18.4194 14.6747 19.0151 15.0245C19.4734 15.2938 20.2201 15.2938 21.7137 15.2938C23.6019 15.2938 24.546 15.2938 25.0377 15.6207C25.6765 16.0453 26.0109 16.805 25.8937 17.5659C25.8035 18.1514 25.1685 18.8536 23.8983 20.2581L13.7506 31.4792C11.7574 33.6833 10.7608 34.7853 10.0916 34.4366C9.42238 34.0877 9.74377 32.634 10.3865 29.7264L11.6456 24.0309C12.1349 21.817 12.3797 20.71 11.7912 19.9725C11.2027 19.2349 10.0746 19.2349 7.81842 19.2349Z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="pt-7 font-Geist font-normal md:text-28xl text-24xl leading-34 md:leading-38 -tracking-[0.03em] text-primaryColor">Fast & secure transactions</h4>
+                    <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-2">Our streamlined process and digital tools help close deals quickly and securely—saving you time and stress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Client Area End Here -->
+
+
+    <!-- Listing Area Start Here -->
+    <section class="bg-cardbg lg:mt-[120px] md:mt-20 mt-10 rounded-tl-[40px] rounded-tr-[40px]">
+        <div class="container">
+            <div class="lg:py-[120px] md:py-20 py-10">
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="flex lg:flex-row flex-col justify-between md:items-center">
+                    <div class="lg:w-626 w-full">
+                        <h4 class="font-Geist font-normal md:text-48xl text-32xl leading-42 md:leading-56 text-primaryColor -tracking-[0.03em]">Featured properties</h4>
+                        <p class="pt-5 font-Geist font-normal text-lg leading-7 text-secondaryColor">Each home is handpicked, verified, and ready for you—whether you're buying or renting.</p>
+                    </div>
+                    <a href="listings.html" class="lg:inline-block hidden py-4 px-10 bg-promoBg rounded-xl text-center mt-7 font-Geist text-white font-medium text-lg leading-7 transition ease-in-out duration-500 hover:bg-greenColor">View all properties</a>
+                </div>
+                
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 md:mt-[60px] mt-7">
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-1.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Luxury 3BHK Condo</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Manhattan, NY</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-2.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Modern Studio Apartment</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Los Angeles, CA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1250 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-3.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Spacious 4-Bedroom Home</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Austin, TX</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-4.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Charming 2BHK Townhome</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Atlanta, GA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1550 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:block hidden">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-5.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Luxury 3BHK Condo</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Manhattan, NY</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:block hidden">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-6.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Modern Studio Apartment</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Los Angeles, CA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1250 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:block hidden">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-7.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Spacious 4-Bedroom Home</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Austin, TX</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:block hidden">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-10.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings-details.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Charming 2BHK Townhome</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Atlanta, GA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1550 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+                </div>    
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="text-center">
+                    <a href="listings.html" class="lg:hidden md:inline-block block py-4 px-10 bg-promoBg rounded-xl text-center mt-7 font-Geist text-white font-medium text-lg leading-7 transition ease-in-out duration-500 hover:bg-greenColor">View all properties</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Listing Area End Here -->
+
+    <!-- Property Area Start Here -->
+    <section class="bg-cardbg">
+        <div class="bg-promoBg md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px]">
+            <div
+                data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="container px-0">
+                <div class="lg:py-[120px] md:py-20 py-10">
+                    <div class="lg:w-626 w-full mx-auto text-center">
+                        <h4 class="font-Geist font-normal md:text-48xl text-32xl leading-42 md:leading-56 text-white -tracking-[0.03em]">Browse by Property Type</h4>
+                        <p class="pt-5 font-Geist font-normal text-lg leading-7 text-white text-opacity-70">Looking for something specific? Explore properties based on your lifestyle, budget, or investment goals.</p>
+                    </div>
+
+                    <div class="overflow-hidden pl-4">
+                        <div class="md:mt-[60px] mt-10 swiperss">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-1.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Apartments</h4>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-2.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Villas</h4>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-3.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Commercial spaces</h4>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-4.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Plots & land</h4>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-5.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Luxury homes</h4>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-6.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Budget-friendly options</h4>
+                                    </div>
+                                </div>
+
+                                 <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-5.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Luxury homes</h4>
+                                    </div>
+                                </div>
+
+                                 <div class="swiper-slide">
+                                    <div class="w-[190px] text-center">
+                                        <div class="group overflow-hidden rounded-full">
+                                            <img class="transform group-hover:scale-110 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/homePage/property/img-4.png" alt="">
+                                        </div>
+                                        <h4 class="font-Geist font-normal text-base leading-6 text-white pt-4">Plots & land</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Navigation buttons and pagination -->
+                            <div class="flex w-[180px] mx-auto justify-center items-center md:gap-[30px] gap-4 md:mt-[70px] mt-7">
+                                <button aria-label="Next slide" id="slider-next-unique">
+                                    <svg class="md:w-auto w-2" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L1 9L9 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </button>
+
+                                <!-- Pagination Dots -->
+                                <div class="custom-paginations text-center w-auto"></div>
+
+                                
+                                <button aria-label="Previous slide" id="slider-previous-unique">
+                                    <svg class="md:w-auto w-2" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L9 9L1 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property Area End Here -->
+
+    <!-- Works Area Start Here -->
+    <section class="bg-promoBg">
+        <div class="md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px] bg-cover bg-no-repeat bg-center" style="background-image: url('assets/img/homePage/bg.png');">
+            <div class="container">
+                <div class="lg:py-[120px] md:py-20 py-10">
+                    <div
+                        data-aos="zoom-in"
+                        data-aos-duration="1200"
+                        data-aos-offset="20"
+                        data-aos-once="true"
+                    class="flex lg:flex-row flex-col justify-between items-start gap-10">
+                        <div class="md:w-626 w-full">
+                            <h4 class="font-Geist font-normal md:text-48xl text-32xl leading-40 md:leading-56 text-white tracking-[-0.03em]">From property search to sold—here’s how it works</h4>
+                            <a href="contact.html" class="lg:inline-block hidden mt-10 bg-white py-4 px-10 rounded-xl font-Geist font-medium text-lg leading-7 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Get in touch</a>    
+                        </div>
+
+                        <div class="lg:w-408 w-full">
+                            <div class="bg-white rounded-xl p-7">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="64" height="64" rx="12" fill="#088868"/>
+                                    <path d="M39.5 39.5L45.5 45.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M42.5 30.5C42.5 23.8726 37.1275 18.5 30.5 18.5C23.8726 18.5 18.5 23.8726 18.5 30.5C18.5 37.1275 23.8726 42.5 30.5 42.5C37.1275 42.5 42.5 37.1275 42.5 30.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                                <h4 class="font-Geist font-normal text-24xl leading-32 -tracking-[0.03em] text-primaryColor pt-7">Search properties</h4>
+                                <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-3">Use smart filters to browse verified listings by location, price, size, and property type. </p>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-7 mt-7">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="64" height="64" rx="12" fill="#088868"/>
+                                    <path d="M38 17V23M26 17V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M33.5 20H30.5C24.8431 20 22.0147 20 20.2574 21.7574C18.5 23.5147 18.5 26.3431 18.5 32V35C18.5 40.6568 18.5 43.4853 20.2574 45.2426C22.0147 47 24.8431 47 30.5 47H33.5C39.1568 47 41.9853 47 43.7426 45.2426C45.5 43.4853 45.5 40.6568 45.5 35V32C45.5 26.3431 45.5 23.5147 43.7426 21.7574C41.9853 20 39.1568 20 33.5 20Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M18.5 29H45.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M31.9932 35H32.0068M31.9932 41H32.0068M37.9865 35H38M26 35H26.0135M26 41H26.0135" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                                <h4 class="font-Geist font-normal text-24xl leading-32 -tracking-[0.03em] text-primaryColor pt-7">Schedule a visit</h4>
+                                <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-3">Once you’ve found a property you love, book a tour—either in person or virtually.</p>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-7 mt-7">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="64" height="64" rx="12" fill="#088868"/>
+                                    <path d="M17 24.5H21.2975C22.3876 24.5 23.433 23.9605 24.2038 23.0001C25.3046 21.6285 26.9329 21.1495 28.4098 21.7629L30.5 22.631M17 37.9502H19.431C21.1703 37.9502 22.0399 37.9502 22.8622 38.182C22.9022 38.1932 22.942 38.2049 22.9817 38.2169C23.7989 38.4652 24.5224 38.9314 25.9696 39.8641C28.8018 41.6894 30.218 42.6022 31.7611 42.491C31.8338 42.4858 31.9064 42.4787 31.9788 42.4702C33.5144 42.2866 34.7179 41.1232 37.1249 38.7962L39.5 36.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M47 24.8508H43.2248C41.6261 24.8508 40.4974 23.982 39.3505 22.8239C38.6077 22.0737 37.6597 21.6316 36.6632 21.5707C35.549 21.5026 34.258 21.4068 33.176 21.704C31.9717 22.0348 31.1765 22.9409 30.3353 23.8879L28.1646 26.3317C27.2785 27.3293 27.2785 28.9468 28.1646 29.9446C28.9295 30.8056 30.1279 30.9392 31.0279 30.2636C31.6756 29.7776 32.4115 28.9926 33.1747 28.7454C34.0336 28.4671 34.5664 29.0923 35.0531 29.7499L38.5334 34.4516C39.8251 36.1964 40.4708 37.069 41.3537 37.5344C42.2366 38 43.2454 38 45.263 38H47" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+
+                                <h4 class="font-Geist font-normal text-24xl leading-32 -tracking-[0.03em] text-primaryColor pt-7">Close the deal</h4>
+                                <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-3">From property negotiations to paperwork, we’ve got you covered.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="contact.html" class="lg:hidden md:inline-block text-center block mt-10 bg-white py-4 px-10 rounded-xl font-Geist font-medium text-lg leading-7 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Get in touch</a>    
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Works Area End Here -->
+
+
+    <!-- Testimonial Area Start Here -->
+    <section class="bg-promoBg">
+        <div class="bg-white md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px]">
+            <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="container xl:px-0 md:px-4 px-0">
+                <div class="lg:py-[120px] md:py-20 py-10">
+                    <div class="lg:w-626 w-full mx-auto">
+                        <h2 class="font-Geist font-normal md:text-48xl text-30xl leading-40 md:leading-56 text-primaryColor tracking-[-0.03em] text-center">What our happy clients say</h2>
+                        <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-5 text-center">Real stories. Real satisfaction. Here’s what our clients have to say about their experience with us.</p>
+                    </div>
+
+                    <div class="overflow-hidden pl-4">
+                        <div class="md:mt-[60px] mt-10 swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl">
+                                        <img src="assets/img/homePage/testi/testi-1.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">Buying my first home was smooth and stress-free thanks to this team! They guided me every step of the way.</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Ross Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div> 
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl md:mt-7">
+                                        <img src="assets/img/homePage/testi/testi-2.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">They understood exactly what I needed and found the perfect space for my growing business. Super professional!</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Jems Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div> 
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl">
+                                        <img src="assets/img/homePage/testi/testi-3.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">Buying my first home was smooth and stress-free thanks to this team! They guided me every step of the way.</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Sarah Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div> 
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl md:mt-7">
+                                        <img src="assets/img/homePage/testi/testi-1.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">They understood exactly what I needed and found the perfect space for my growing business. Super professional!</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Jems Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div> 
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl">
+                                        <img src="assets/img/homePage/testi/testi-2.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">They understood exactly what I needed and found the perfect space for my growing business. Super professional!</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Jems Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div>  
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl md:mt-7">
+                                        <img src="assets/img/homePage/testi/testi-3.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">Buying my first home was smooth and stress-free thanks to this team! They guided me every step of the way.</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Sarah Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div> 
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl">
+                                        <img src="assets/img/homePage/testi/testi-1.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">Buying my first home was smooth and stress-free thanks to this team! They guided me every step of the way.</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Ross Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div>  
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="bg-cardbg p-7 rounded-2xl md:mt-7">
+                                        <img src="assets/img/homePage/testi/testi-2.svg" alt="">
+                                        <p class="md:pt-12 pt-4 font-Geist font-normal text-base leading-7 text-secondaryColor">They understood exactly what I needed and found the perfect space for my growing business. Super professional!</p>
+                                        <h5 class="md:pt-12 pt-4 font-Geist font-medium text-lg leading-7 text-primaryColor">Jems Taylor <span class="block text-base leading-6 font-normal text-secondaryColor">Happy Homeowner</span></h5>
+                                    </div>  
+                                </div>
+                            </div>
+
+                            
+                            
+                            <!-- Navigation buttons and pagination -->
+                            <div class="flex w-[180px] justify-between mx-auto items-center md:gap-[30px] gap-4 md:mt-[70px] mt-7">
+                                <button aria-label="Next slide" id="slider-next-uniques">
+                                    <svg class="md:w-auto w-2" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 1L1 9L9 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </button>
+
+                                <!-- Pagination Dots -->
+                                <div class="custom-pagination text-center w-auto"></div>
+
+                                
+                                <button aria-label="Previous slide" id="slider-previous-uniques">
+                                    <svg class="md:w-auto w-2" width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L9 9L1 17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Testimonial Area End Here -->
+
+    <!-- FAQ Area Start Here -->
+    <section class="bg-white">
+        <div class="bg-cardbg md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px]">
+            <div class="container">
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="lg:py-[120px] md:py-20 py-10">
+                    <div class="lg:w-626 w-full mx-auto">
+                        <h2 class="font-Geist font-normal md:text-48xl text-30xl leading-40 md:leading-56 text-primaryColor tracking-[-0.03em] text-center">Got questions? We’ve got answers!</h2>
+                    </div>
+
+                    <div class="md:mt-[60px] mt-10">
+                        <div id="all" class="collapsible block">
+                            <div x-data="{ openTab: 1, faqData: [
+                                {
+                                    id: 1,
+                                    question: 'How do I book a property tour?',
+                                    answer: 'You can schedule a visit directly through our website or by calling your agent. We offer in-person and virtual tours for convenience.'
+                                },
+                                {
+                                    id: 2,
+                                    question: 'Are your listings updated in real-time?',
+                                    answer: 'You can schedule a visit directly through our website or by calling your agent. We offer in-person and virtual tours for convenience.'
+                                },
+                                {
+                                    id: 3,
+                                    question: 'How can I speak to an agent directly?',
+                                    answer: 'You can schedule a visit directly through our website or by calling your agent. We offer in-person and virtual tours for convenience.'
+                                }
+                            ] }">
+
+                                <template x-for="(faq, index) in faqData" :key="index">
+                                    <div 
+                                        class="mb-7 border-[1.5px] rounded-xl md:p-7 p-5 transition-colors duration-300"
+                                        :class="openTab === faq.id ? 'bg-greenColor border-transparent' : 'bg-white border-borderColor'"
+                                    >
+                                        <!-- Question -->
+                                        <div 
+                                            @click="openTab === faq.id ? openTab = -1 : openTab = faq.id" 
+                                            class="w-full text-left flex justify-between md:items-center cursor-pointer transition-colors duration-300 md:gap-0 gap-4"
+                                        >
+                                            <h6 x-text="faq.question" class="xl:w-full lg:w-[90%] md:w-[650px] w-[300px] font-medium font-Geist md:text-24xl text-lg leading-6 md:leading-32 text-primaryColor"
+                                                :class="openTab === faq.id ? 'text-white' : 'text-primaryColor'"
+                                            >
+                                            </h6>
+
+                                            <!-- Minus Icon -->
+                                            <svg 
+                                                class="w-5 h-5 md:mt-0 mt-2" 
+                                                x-show="openTab === faq.id" 
+                                                x-transition.opacity
+                                                width="26" height="4" viewBox="0 0 26 4" fill="none">
+                                                <path d="M1.33594 2H24.6693" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+
+                                            <!-- Plus Icon -->
+                                            <svg 
+                                                class="w-6 h-6 md:mt-0 mt-2" 
+                                                x-show="openTab !== faq.id" 
+                                                x-transition.opacity
+                                                width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                                <path d="M20 8.33398V31.6673" stroke="#088868" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.33594 20H31.6693" stroke="#088868" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+
+                                        <!-- Answer -->
+                                        <div 
+                                            x-show="openTab === faq.id" 
+                                            x-transition:enter="transition ease-out duration-300"
+                                            x-transition:enter-start="opacity-0 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-96"
+                                            x-transition:leave="transition ease-in duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-96"
+                                            x-transition:leave-end="opacity-0 max-h-0"
+                                            class="overflow-hidden"
+                                        >
+                                            <p 
+                                                class="pt-3 xl:w-[760px] w-full text-white text-base font-Geist text-left font-normal leading-6" 
+                                                x-html="faq.answer">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </template>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Area End Here -->
+
+
+    <!-- Promo Area Start Here -->
+     <section class="bg-cardbg">
+        <div class="bg-promoBg md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px]">
+            <div class="container">
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="lg:py-[120px] md:py-20 py-10 lg:w-626 w-full mx-auto">
+                    <h2 class="font-Geist font-normal md:text-48xl text-30xl leading-40 md:leading-56 text-white tracking-[-0.03em] text-center">Ready to find your perfect property?</h2>
+                    <p class="font-Geist font-normal text-base leading-6 text-[#FFFFFFBF] pt-5 text-center">Start your journey today with expert support and exclusive listings.</p>
+                    <div class="text-center">
+                        <a href="contact.html" class="font-Geist md:inline-block block font-normal text-base leading-6 rounded-xl py-4 px-10 bg-greenColor md:mt-10 mt-7 text-white transition ease-in-out duration-500 hover:bg-white hover:text-primaryColor">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Promo Area End Here -->
+
+
+    <!-- Footer Area Start Here -->
+    <footer class="bg-promoBg">
+        <div class="md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px] bg-white">
+            <div class="container xl:px-0">
+                <div class="lg:pt-[120px] md:pt-20 pt-10">
+                    <div
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        data-aos-offset="20"
+                        data-aos-once="true"
+                        class="flex xl:flex-row flex-col justify-between items-start xl:gap-[246px] gap-10">
+                        <div class="md:w-408 w-full">
+                            <a href="index.html">
+                                <img src="assets/img/logo.svg" alt="">
+                            </a>
+                            <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-6">Explore top-rated properties in your desired location — homes, apartments, and commercial spaces tailored for your lifestyle.</p>
+                        
+                            <div class="flex gap-3 mt-6">
+                                <a href="https://www.facebook.com/" target="_blank" class="group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M21.4758 18.8746L21.8908 16.341H19.2968V14.6969C19.2968 14.0039 19.659 13.3279 20.8209 13.3279H22V11.1711C22 11.1711 20.9301 11 19.9069 11C17.7708 11 16.3746 12.2136 16.3746 14.4103V16.3414H14V18.875H16.3746V25H19.2968V18.875L21.4758 18.8746Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M18.0001 11C16.099 11 15.8606 11.0081 15.114 11.0421C14.3689 11.0761 13.86 11.1945 13.4148 11.3675C12.9544 11.5464 12.5641 11.7857 12.1749 12.1749C11.7857 12.564 11.5464 12.9545 11.3675 13.4148C11.1944 13.86 11.0761 14.3689 11.0421 15.114C11.008 15.8606 11 16.099 11 18.0001C11 19.9012 11.008 20.1396 11.0421 20.8863C11.0761 21.6313 11.1944 22.1402 11.3675 22.5854C11.5464 23.0458 11.7858 23.4361 12.1749 23.8253C12.5641 24.2145 12.9544 24.4539 13.4148 24.6328C13.86 24.8058 14.3689 24.9241 15.114 24.9581C15.8606 24.9922 16.099 25.0002 18.0001 25.0002C19.9012 25.0002 20.1396 24.9922 20.8863 24.9581C21.6313 24.9241 22.1402 24.8058 22.5854 24.6328C23.0458 24.4539 23.4361 24.2145 23.8253 23.8253C24.2145 23.4361 24.4539 23.0458 24.6328 22.5854C24.8058 22.1402 24.9241 21.6313 24.9581 20.8863C24.9922 20.1396 25.0002 19.9012 25.0002 18.0001C25.0002 16.099 24.9922 15.8606 24.9581 15.114C24.9241 14.3689 24.8058 13.86 24.6328 13.4148C24.4539 12.9545 24.2145 12.564 23.8253 12.1749C23.4361 11.7857 23.0458 11.5464 22.5854 11.3675C22.1402 11.1945 21.6313 11.0761 20.8863 11.0421C20.1396 11.0081 19.9012 11 18.0001 11ZM18.0001 12.2613C19.8692 12.2613 20.0906 12.2684 20.8288 12.3021C21.5113 12.3332 21.8819 12.4473 22.1286 12.5431C22.4553 12.6701 22.6885 12.8218 22.9335 13.0667C23.1784 13.3117 23.3301 13.5449 23.4571 13.8716C23.553 14.1183 23.667 14.489 23.6981 15.1715C23.7318 15.9096 23.739 16.131 23.739 18.0001C23.739 19.8692 23.7318 20.0906 23.6981 20.8288C23.667 21.5113 23.553 21.8819 23.4571 22.1286C23.3301 22.4553 23.1784 22.6885 22.9335 22.9335C22.6885 23.1784 22.4553 23.3301 22.1286 23.4571C21.8819 23.553 21.5113 23.667 20.8288 23.6981C20.0907 23.7318 19.8694 23.739 18.0001 23.739C16.1309 23.739 15.9095 23.7318 15.1715 23.6981C14.4889 23.667 14.1183 23.553 13.8717 23.4571C13.5449 23.3301 13.3117 23.1784 13.0668 22.9335C12.8218 22.6885 12.6701 22.4553 12.5431 22.1286C12.4473 21.8819 12.3332 21.5113 12.3021 20.8288C12.2684 20.0906 12.2613 19.8692 12.2613 18.0001C12.2613 16.131 12.2684 15.9096 12.3021 15.1715C12.3332 14.4889 12.4473 14.1183 12.5431 13.8717C12.6701 13.5449 12.8218 13.3117 13.0667 13.0668C13.3117 12.8218 13.5449 12.6701 13.8716 12.5431C14.1183 12.4473 14.489 12.3332 15.1715 12.3021C15.9096 12.2684 16.131 12.2613 18.0001 12.2613" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                        <path d="M18.0004 20.3339C16.7117 20.3339 15.667 19.2892 15.667 18.0006C15.667 16.7118 16.7117 15.6672 18.0004 15.6672C19.2891 15.6672 20.3338 16.7118 20.3338 18.0006C20.3338 19.2892 19.2891 20.3339 18.0004 20.3339ZM18.0004 14.4059C16.0151 14.4059 14.4058 16.0152 14.4058 18.0006C14.4058 19.9858 16.0151 21.5952 18.0004 21.5952C19.9857 21.5952 21.5951 19.9858 21.5951 18.0006C21.5951 16.0152 19.9857 14.4059 18.0004 14.4059ZM22.5771 14.2639C22.5771 14.7278 22.201 15.1039 21.7371 15.1039C21.2732 15.1039 20.8971 14.7278 20.8971 14.2639C20.8971 13.7999 21.2732 13.4238 21.7371 13.4238C22.201 13.4238 22.5771 13.7999 22.5771 14.2639Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M25 13.4205C24.4758 13.6655 23.9197 13.8263 23.3503 13.8975C23.9434 13.5226 24.3988 12.9289 24.6132 12.2215C24.0494 12.5744 23.4326 12.823 22.7893 12.9567C22.2654 12.3679 21.5189 12 20.6928 12C19.1065 12 17.8204 13.3564 17.8204 15.0293C17.8204 15.2668 17.8458 15.498 17.8948 15.7198C15.5077 15.5934 13.3913 14.3874 11.9746 12.5545C11.7274 13.002 11.5858 13.5224 11.5858 14.0775C11.5858 15.1285 12.0929 16.0557 12.8635 16.599C12.4074 16.584 11.9613 16.454 11.5625 16.2201C11.5624 16.2328 11.5624 16.2454 11.5624 16.2582C11.5624 17.726 12.5524 18.9504 13.8663 19.2287C13.4434 19.35 12.9997 19.3678 12.5693 19.2806C12.9347 20.4841 13.9955 21.3599 15.2523 21.3845C14.2693 22.1969 13.0308 22.6813 11.6852 22.6813C11.4533 22.6813 11.2247 22.6669 11 22.6389C12.2711 23.4985 13.7809 24 15.4029 24C20.6861 24 23.5751 19.3838 23.5751 15.3807C23.5751 15.2493 23.5723 15.1186 23.5668 14.9887C24.1291 14.56 24.6144 14.0289 25 13.4205Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                    
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2003 15.8783H18.8001V17.1733C19.1746 16.4285 20.135 15.7593 21.5777 15.7593C24.3434 15.7593 25 17.2419 25 19.9621V25H22.2V20.5816C22.2 19.0325 21.8255 18.1589 20.8721 18.1589C19.5498 18.1589 19.0003 19.1004 19.0003 20.5809V25H16.2003V15.8783ZM11.399 24.881H14.199V15.7593H11.399V24.881ZM14.6001 12.785C14.6002 13.0197 14.5537 13.2521 14.4632 13.4686C14.3727 13.6852 14.2401 13.8816 14.073 14.0464C13.7345 14.3828 13.2763 14.5712 12.799 14.57C12.3226 14.5697 11.8654 14.3818 11.5264 14.0471C11.3599 13.8817 11.2278 13.6851 11.1374 13.4685C11.0471 13.2519 11.0004 13.0197 11 12.785C11 12.3111 11.189 11.8575 11.5271 11.5229C11.8658 11.1877 12.3232 10.9998 12.7997 11C13.2771 11 13.7349 11.1883 14.073 11.5229C14.4104 11.8575 14.6001 12.3111 14.6001 12.785Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="xl:w-626 w-full flex md:flex-row flex-col justify-between xl:gap-20 gap-10">
+                            <div class="w-auto">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Quick links</h4>
+                                <ul class="mt-6">
+                                    <li><a href="index.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Home</a></li>
+                                    <li class="pt-4"><a href="about.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">About Us</a></li>
+                                    <li class="pt-4"><a href="listings.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Listings</a></li>
+                                    <li class="pt-4"><a href="blog.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Blog</a></li>
+                                    <li class="pt-4"><a href="contact.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-auto">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Top category</h4>
+                                <ul class="mt-6">
+                                    <li><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Apartments</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Villas</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Commercial spaces</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Plots & land</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Luxury homes</a></li>
+                                </ul>
+                            </div>
+                            <div class="xl:w-[207px] md:w-[290px] w-full">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Top category</h4>
+                                <p class="pt-6 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Address: </span>123 Property Ave, Dream City, LC 56789, United States</p>
+                                <p class="pt-4 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Email: </span>info@demoemail.com</p>
+                                <p class="pt-4 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Phone: </span>+1 (800) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        data-aos="zoom-in"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                    class="py-7">
+                        <img class="w-full" src="assets/img/footer-logo.svg" alt="">
+                    </div>
+
+                    <hr class="border-t border-borderColor"/>
+                    <div
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        data-aos-offset="20"
+                        data-aos-once="true"
+                    class="flex md:flex-row flex-col-reverse justify-between items-center py-7 md:gap-0 gap-5">
+                        <p class="font-Geist font-normal text-base leading-6 text-secondaryColor">&copy; 2025 company all rights reserved.</p>
+                        <div class="flex gap-7">
+                            <a href="#" class="font-Geist font-normal text-base leading-6 text-secondaryColor">Terms & conditions</a>
+                            <a href="#" class="font-Geist font-normal text-base leading-6 text-secondaryColor">Privacy policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End Here -->
+
+    <script src="assets/js/alpine.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/aos_script.js"></script>
+    
+</body>
+</html>

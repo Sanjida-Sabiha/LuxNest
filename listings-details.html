@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="assets/img/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxNest || Listings Details Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+</head>
+<body>
+    <!-- Header Area Start Here -->
+    <header class="py-5 border-b border-borderColor">
+        <div class="container">
+            <nav>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <a href="index.html">
+                            <img src="assets/img/logo.svg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="lg:block hidden">
+                        <ul class="flex items-center gap-8">
+                            <li class="group relative w-max">
+                                <a href="index.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="about.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">About Us</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="listings.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Listings</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="agents.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Agents</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="py-1.5 group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" onclick="event.preventDefault()" class="inline-flex items-center text-base font-Geist font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Pages
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="shadow-xl absolute left-0 top-9 w-52 py-2 list-none bg-white rounded-md hidden z-10 group-hover:block border border-borderColor" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items (fixed like Home/About style) -->
+                                    <li class="relative w-max">
+                                        <a href="listings-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Listings Details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="agents-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Agents details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="blog.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Blog Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="blog-details.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Blog details Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="faq.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            FAQ
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="contact.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            Contact
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+
+                                    <li class="relative w-max">
+                                        <a href="404.html"
+                                            class="peer block px-5 py-2 text-base font-Geist font-normal leading-6 text-secondaryColor transition-all ease-in-out duration-500 hover:text-primaryColor">
+                                            404 Page
+                                        </a>
+                                        <span class="absolute bottom-1 left-5 w-0 h-[1px] bg-primaryColor transition-all duration-500 peer-hover:w-[calc(100%-40px)]"></span>
+                                    </li>
+                                </ul>
+                            </li>   
+                        </ul>
+                    </div>
+
+                    <!-- Menu button for mobile -->
+                    <div class="flex items-center lg:hidden sm:block">
+                        <button id="mobileMenuButton" class="focus:outline-none">
+                            
+
+                            
+                            <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+
+                                <!-- Open Icon (3 lines) -->
+                                <path id="menuOpenIcon" d="M4 5H20 M4 12H20 M4 19H20"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                <!-- Close Icon (X) -->
+                                <path id="menuCloseIcon" class="hidden"
+                                    d="M6 18L18 6M6 6l12 12"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <div class="lg:flex gap-3 hidden">
+                        <a href="sign-in.html" class="font-Geist py-3 px-6 rounded-xl border border-borderColor font-medium text-base leading-6 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Log in</a>
+                        <a href="sign-up.html" class="font-Geist py-3 px-6 rounded-xl border border-greenColor bg-greenColor font-medium text-base leading-6 text-white transition ease-in-out duration-500 hover:bg-promoBg hover:border-promoBg">Sign up</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="border border-borderColor bg-white shadow-btn hidden rounded-lg my-2 mx-4 py-7 transition-height transition-all duration-1000 ease-in-out overflow-hidden absolute inset-x-0 top-[75px] z-50">
+                    <div class="">
+                        <ul class="dropdown flex flex-col gap-y-5 px-5">
+                            <li class="group relative w-max">
+                                <a href="index.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="about.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">About Us</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="listings.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Listings</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class="group relative w-max">
+                                <a href="agents.html" class="text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Agents</a>
+                                <span class="absolute -bottom-1 left-0 w-0 transition-all duration-500 h-[2px] bg-primaryColor group-hover:w-full"></span>
+                            </li>
+                            <li class=" group relative">
+                                <!-- Icon added here for the mobile menu -->
+                                <a href="javascript:void(0);" id="mobileFeaturesToggle" class=" pb-5 flex justify-between text-base font-Geist font-normal leading-6 text-secondaryColor transition ease-in-out duration-500 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500 items-center">
+                                    Pages
+                                    <svg id="mobileDropdownIcon" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                                <ul id="mobileDropdownMenu" class="hidden bg-bg mb-5 rounded-md shadow-2xl bg-white">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="listings-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Listings Details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="agents-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Agents details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Blog details Page</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="404.html" class="text-base font-normal font-Geist block px-5 py-3 text-primaryColor hover:text-btnBg hover:transition hover:ease-in-out hover:duration-500">404 Page</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:flex block text-center justify-center mt-7 lg:hidden px-4">
+                        <a href="sign-in.html" class="md:inline-block block md:mr-3 font-Geist py-3 px-6 rounded-xl border border-borderColor font-medium text-base leading-6 text-primaryColor transition ease-in-out duration-500 hover:bg-greenColor hover:text-white hover:border-greenColor">Log in</a>
+                        <a href="sign-up.html" class="md:mt-0 mt-4 md:inline-block block font-Geist py-3 px-6 rounded-xl border border-greenColor bg-greenColor font-medium text-base leading-6 text-white transition ease-in-out duration-500 hover:bg-promoBg hover:border-promoBg hover:text-primaryColor">Sign up</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Area End Here -->
+
+    <!-- Promo Area Start Here -->
+     <section class="bg-primaryColor border-b border-borderColor">
+        <div class="container">
+            <div
+                data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="p-5">
+                <p class="text-center font-Geist font-normal text-base leading-6 text-white text-opacity-70">Lock in Your New Home wth Flexible Payment Plans and Discounts! <span class="text-white underline inline-block underline-offset-1">Learn More</span></p>
+            </div>
+        </div>
+     </section>
+    <!-- Promo Area End Here -->
+
+    <!-- Details Area Start Here -->
+     <section class="mt-10">
+        <div class="container">
+            <div
+                data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="flex justify-between items-center">
+                <div class="flex gap-3 items-center">
+                    <a href="listings.html" class="border border-borderColor rounded-lg w-12 h-12 flex justify-center items-center">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="black" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Back to Listings</h4>
+                </div>
+
+                <div class="flex gap-4 items-center">
+                    <a href="#" class="border border-borderColor rounded-lg w-12 h-12 flex justify-center items-center">
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.282 10.9659C6.1025 10.9659 2.8669 12.4119 1.0773 16.3646C1.0773 16.3646 -0.469799 5.51768 10.282 5.51768C10.282 5.51768 10.283 3.92016 10.284 2.54449C10.285 1.77198 11.1893 1.35403 11.7785 1.85418L18.6767 7.6976C19.0956 8.0521 19.1105 8.6919 18.7034 9.0594C17.1871 10.4301 13.7792 13.5102 11.7944 15.3038C11.211 15.8317 10.282 15.4148 10.282 14.6274V10.9659Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="border border-borderColor rounded-lg w-12 h-12 flex justify-center items-center">                   
+                        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.761 18.8538C8.5904 17.5179 6.57111 15.9456 4.73929 14.1652C3.45144 12.8829 2.47101 11.3198 1.8731 9.59539C0.797144 6.25031 2.05393 2.42083 5.57112 1.28752C7.41961 0.692435 9.43845 1.03255 10.9961 2.20148C12.5543 1.03398 14.5725 0.693978 16.4211 1.28752C19.9383 2.42083 21.2041 6.25031 20.1281 9.59539C19.5302 11.3198 18.5498 12.8829 17.2619 14.1652C15.4301 15.9456 13.4108 17.5179 11.2402 18.8538L11.0051 19L10.761 18.8538Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+
+            <div
+                data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="mt-10 lg:flex-row flex-col flex justify-between lg:gap-20 gap-10">
+                <div
+                    data-aos="zoom-in"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="">
+                    <div class="xl:w-626 w-full">
+                        <!-- Main Image -->
+                        <div class="relative">
+                            <img id="mainImage" class="rounded-xl w-full" src="assets/img/listingPage/img-1.png" alt="">
+                            <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-sm leading-5 py-[10px] px-5 top-3 left-3">For Sale</span>
+                                                
+                        </div>
+
+                        <!-- Thumbnail Images -->
+                        <div class="flex mt-4 md:space-x-3 space-x-2">
+                            <img class="thumbnail w-[144.5px] h-[144.5px] object-cover rounded-lg cursor-pointer" src="assets/img/listingPage/img-2.png" alt="Thumb 1">
+                            <img class="thumbnail w-[144.5px] h-[144.5px] object-cover rounded-lg cursor-pointer" src="assets/img/listingPage/img-3.png" alt="Thumb 2">
+                            <img class="thumbnail w-[144.5px] h-[144.5px] object-cover rounded-lg cursor-pointer" src="assets/img/listingPage/img-4.png" alt="Thumb 3">
+                            <div class="relative">
+                                <img class="thumbnail w-[144.5px] h-[144.5px] object-cover rounded-lg cursor-pointer" src="assets/img/listingPage/img-5.png" alt="Thumb 4">
+                                <span class="absolute text-white font-Geist font-medium xl:text-base lg:text-xs md:text-base text-xs leading-5 md:leading-6 md:top-1/2 top-[40%] left-[20%] md:left-1/2 md:transform md:-translate-x-1/2">Show all</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-574 w-full">
+                    <h2 class="font-Geist font-medium md:text-36xl text-28xl leading-40 md:leading-44 text-primaryColor -tracking-[0.03em]">Charming 2BHK Townhome</h2>
+                    <div class="flex gap-5 mt-4">
+                        <div class="flex gap-1 items-center">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                            </svg>
+                            <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Atlanta, GA</h4>
+                        </div>
+
+                        <div class="flex gap-1 items-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="#535353" stroke-width="1.5"/>
+                                <path d="M14.7102 10.0611C14.6111 9.29844 13.7354 8.06622 12.1608 8.06619C10.3312 8.06616 9.56136 9.07946 9.40515 9.58611C9.16145 10.2638 9.21019 11.6571 11.3547 11.809C14.0354 11.999 15.1093 12.3154 14.9727 13.956C14.836 15.5965 13.3417 15.951 12.1608 15.9129C10.9798 15.875 9.04764 15.3325 8.97266 13.8733M11.9734 6.99805V8.06982M11.9734 15.9031V16.998" stroke="#535353" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+
+                            <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">$480,000</h4>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 -tracking-[0.03em]">Property overview</h4>
+                        <p class="pt-4 font-Geist font-normal text-base leading-6 text-secondaryColor">Step into comfort and style with this beautifully designed 2BHK townhome located in the heart of Atlanta. Boasting a spacious layout, elegant finishes, and a welcoming atmosphere, this home is perfect for families, professionals, or anyone looking for modern living in a vibrant neighborhood.</p>        
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 -tracking-[0.03em]">Property overview</h4>
+                    
+                        <div class="border border-borderColor rounded-2xl mt-4">
+                            <div class="flex justify-between p-4">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Type</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">Appartment</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-t border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Bedrooms</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">5 bed</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Bathrooms</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">3 bath</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Total Area</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">2,500 Sqft</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Furniture</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">No furniture</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Garage</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">1 garage</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Year built</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">in 2016</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 -tracking-[0.03em]">Address</h4>
+                    
+                        <div class="border border-borderColor rounded-2xl mt-4">
+                            <div class="flex justify-between p-4">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Location</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">123 Seaside Avenue, Miami, FL</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4 border-t border-b border-borderColor">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">City</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">Miami</h4>
+                            </div>
+
+                            <div class="flex justify-between p-4">
+                                <h4 class="font-Geist font-medium text-base leading-6 text-primaryColor">Zip code</h4>
+                                <h4 class="font-Geist font-normal text-base leading-6 text-secondaryColor">1000</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 -tracking-[0.03em]">Property highlights</h4>
+
+                        <ul>
+                            <li class="pt-4 flex gap-5 items-center font-Geist font-normal text-base leading-6 text-secondaryColor">
+                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L4.5 12.5L15 1.5" stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Natural light floods every room
+                            </li>
+
+                            <li class="pt-4 flex gap-5 items-center font-Geist font-normal text-base leading-6 text-secondaryColor">
+                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L4.5 12.5L15 1.5" stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Hardwood flooring throughout
+                            </li>
+
+                            <li class="pt-4 flex gap-5 items-center font-Geist font-normal text-base leading-6 text-secondaryColor">
+                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L4.5 12.5L15 1.5" stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                In-unit laundry area
+                            </li>
+
+                            <li class="pt-4 flex gap-5 items-center font-Geist font-normal text-base leading-6 text-secondaryColor">
+                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L4.5 12.5L15 1.5" stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Energy-efficient systems installed
+                            </li>
+
+                            <li class="pt-4 flex gap-5 items-center font-Geist font-normal text-base leading-6 text-secondaryColor">
+                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9L4.5 12.5L15 1.5" stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Freshly painted and move-in ready
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 text-primaryColor">Location benefits</h4>
+
+                        <ul class="list-disc ml-4">
+                            <li class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-4">Situated in a quiet, friendly neighborhood</li>
+                            <li class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-4">Minutes away from schools, shopping centers, and restaurants</li>
+                            <li class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-4">Easy access to public transportation and major highways</li>
+                            <li class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-4">Close to parks and green spaces for outdoor activities</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 bg-cardbg rounded-xl">
+                        <div class="p-7">
+                            <h4 class="font-Geist font-medium md:text-24xl text-22xl leading-8 md:leading-32 -tracking-[0.03em]">Schedule a visit</h4>
+                            <p class="pt-4 font-Geist font-normal text-base leading-6 text-secondaryColor">Don’t miss your chance to own this charming townhome in Atlanta!Contact us today to book a private tour or learn more about this awesome property.</p>
+                            <a href="contact.html" class="py-4 px-10 bg-greenColor rounded-xl md:inline-block block text-center mt-7 font-Geist text-white font-medium text-lg leading-7 transition ease-in-out duration-500 hover:bg-promoBg">Get in touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Details Area End Here -->
+
+
+    <!-- Listing Area Start Here -->
+    <section class="bg-cardbg lg:mt-[120px] md:mt-20 mt-10 rounded-tl-[40px] rounded-tr-[40px]">
+        <div
+            data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+        class="container">
+            <div class="lg:py-[120px] md:py-20 py-10">
+                <div class="flex lg:flex-row flex-col justify-between lg:items-center">
+                    <div class="lg:w-626 w-full">
+                        <h4 class="font-Geist font-normal md:text-48xl text-32xl leading-42 md:leading-56 text-primaryColor -tracking-[0.03em]">Similar properties</h4>
+                        <p class="pt-5 font-Geist font-normal text-lg leading-7 text-secondaryColor">Each home is handpicked, verified, and ready for you—whether you're buying or renting.</p>
+                    </div>
+                    <a href="listings.html" class="py-4 px-10 bg-promoBg rounded-xl md:inline-block block text-center mt-7 font-Geist text-white font-medium text-lg leading-7 transition ease-in-out duration-500 hover:bg-greenColor">View all properties</a>
+                </div>
+                
+                <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-7 md:mt-[60px] mt-7">
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-1.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Luxury 3BHK Condo</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Manhattan, NY</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">2 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-2.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Modern Studio Apartment</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Los Angeles, CA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">3 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1250 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-3.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Spacious 4-Bedroom Home</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Austin, TX</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">4 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1950 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="group overflow-hidden rounded-xl">
+                            <img class="rounded-xl w-full transform group-hover:scale-105 transition ease-in-out duration-700 group-hover:transition group-hover:ease-in-out group-hover:duration-700" src="assets/img/blogPage/blog-4.png" alt="">
+                        </div>
+                        <span class="absolute bg-white rounded-[4px] text-primaryColor font-Geist font-medium text-xs leading-5 py-[3px] px-3 top-3 left-3">For Sale</span>
+                        <div class="mt-4">
+                            <h4><a href="listings.html" class="font-Geist font-medium text-base leading-6 text-primaryColor">Charming 2BHK Townhome</a></h4>
+
+                            <div class="flex gap-1 items-center mt-2">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.8335 15C4.30939 15.3431 3.3335 15.8703 3.3335 16.4614C3.3335 17.4953 6.31826 18.3333 10.0002 18.3333C13.6821 18.3333 16.6668 17.4953 16.6668 16.4614C16.6668 15.8703 15.6909 15.3431 14.1668 15" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    <path d="M12.0832 7.49996C12.0832 8.65054 11.1504 9.58329 9.99984 9.58329C8.84925 9.58329 7.9165 8.65054 7.9165 7.49996C7.9165 6.34937 8.84925 5.41663 9.99984 5.41663C11.1504 5.41663 12.0832 6.34937 12.0832 7.49996Z" stroke="#535353" stroke-width="1.25"/>
+                                    <path d="M11.0477 14.578C10.7666 14.8486 10.3909 15 10 15C9.609 15 9.23334 14.8486 8.95225 14.578C6.37842 12.084 2.92916 9.29788 4.61126 5.25307C5.52075 3.06606 7.70395 1.66663 10 1.66663C12.296 1.66663 14.4792 3.06607 15.3887 5.25307C17.0687 9.29279 13.6278 12.0925 11.0477 14.578Z" stroke="#535353" stroke-width="1.25"/>
+                                </svg>
+                                <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">Atlanta, GA</h4>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-1 mt-2">
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.3332 14.5834H1.6665" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.3332 17.5V13.3333C18.3332 11.762 18.3332 10.9763 17.845 10.4882C17.3568 10 16.5712 10 14.9998 10H4.99984C3.42849 10 2.64281 10 2.15466 10.4882C1.6665 10.9763 1.6665 11.762 1.6665 13.3333V17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.3332 10V8.84817C13.3332 8.42525 13.2569 8.28378 12.8662 8.11708C12.0524 7.76991 11.0647 7.5 9.99984 7.5C8.935 7.5 7.94724 7.76991 7.1335 8.11708C6.74279 8.28378 6.6665 8.42525 6.6665 8.84817V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V7.5C2.5 6.32149 2.5 5.73223 2.86612 5.36612C3.23223 5 3.82149 5 5 5C5.22896 5 5.54738 5.0606 5.75235 4.9501C5.84492 4.90021 5.92791 4.77407 6.09391 4.5218C6.89101 3.31039 8.5205 2.5 10 2.5C11.4795 2.5 13.109 3.31039 13.9061 4.5218C14.0721 4.77407 14.1551 4.90021 14.2477 4.9501C14.4527 5.0606 14.771 5 15 5C16.1785 5 16.7677 5 17.1339 5.36612C17.5 5.73223 17.5 6.32149 17.5 7.5V10" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bed</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.99984 16.6666L4.1665 17.5M14.9998 16.6666L15.8332 17.5" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M2.5 10V10.8333C2.5 13.5832 2.5 14.9581 3.35427 15.8124C4.20854 16.6667 5.58347 16.6667 8.33333 16.6667H11.6667C14.4165 16.6667 15.7914 16.6667 16.6457 15.8124C17.5 14.9581 17.5 13.5832 17.5 10.8333V10" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.6665 10H18.3332" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M3.3335 10V4.60283C3.3335 3.44147 4.27497 2.5 5.43633 2.5C6.36821 2.5 7.18895 3.11332 7.45299 4.00701L7.50016 4.16667" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                        <path d="M6.6665 5.00004L8.74984 3.33337" stroke="#535353" stroke-width="1.25" stroke-linecap="round"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">5 Bath</h4>
+                                </div>
+
+                                <div class="flex gap-1 items-center">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.83246 13.1673L13.1672 6.83258M6.83246 13.1673C6.46282 12.7977 6.82499 11.0543 6.83246 10.5279M6.83246 13.1673C7.20211 13.537 8.9455 13.1748 9.47192 13.1673M13.1672 6.83258C12.7976 6.46294 11.0542 6.82511 10.5278 6.83259M13.1672 6.83258C13.5368 7.20223 13.1747 8.94563 13.1672 9.47204" stroke="#535353" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2.0835 10C2.0835 6.26809 2.0835 4.40212 3.24286 3.24274C4.40224 2.08337 6.26821 2.08337 10.0002 2.08337C13.7321 2.08337 15.5981 2.08337 16.7575 3.24274C17.9168 4.40212 17.9168 6.26809 17.9168 10C17.9168 13.732 17.9168 15.598 16.7575 16.7574C15.5981 17.9167 13.7321 17.9167 10.0002 17.9167C6.26821 17.9167 4.40224 17.9167 3.24286 16.7574C2.0835 15.598 2.0835 13.732 2.0835 10Z" stroke="#535353" stroke-width="1.25"/>
+                                    </svg>
+                                    <h4 class="font-Geist font-normal text-sm leading-5 text-secondaryColor">1550 sqft</h4>
+                                </div>
+                            </div>
+                            <p class="font-Geist font-medium text-base leading-6 text-primaryColor pt-4">$2,150,000</p>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+    </section>
+    <!-- Listing Area End Here -->
+
+    <!-- Promo Area Start Here -->
+     <section class="bg-cardbg">
+        <div class="bg-promoBg md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px]">
+            <div class="container">
+                <div
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                class="lg:py-[120px] md:py-20 py-10 lg:w-626 w-full mx-auto">
+                    <h2 class="font-Geist font-normal md:text-48xl text-30xl leading-40 md:leading-56 text-white tracking-[-0.03em] text-center">Ready to find your perfect property?</h2>
+                    <p class="font-Geist font-normal text-base leading-6 text-[#FFFFFFBF] pt-5 text-center">Start your journey today with expert support and exclusive listings.</p>
+                    <div class="text-center">
+                        <a href="contact.html" class="font-Geist md:inline-block block font-normal text-base leading-6 rounded-xl py-4 px-10 bg-greenColor md:mt-10 mt-7 text-white transition ease-in-out duration-500 hover:bg-white hover:text-primaryColor">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Promo Area End Here -->
+
+
+    <!-- Footer Area Start Here -->
+    <footer class="bg-promoBg">
+        <div class="md:rounded-tl-[40px] rounded-tl-[20px] rounded-tr-[20px] md:rounded-tr-[40px] bg-white">
+            <div
+                data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+            class="container xl:px-0">
+                <div class="lg:pt-[120px] md:pt-20 pt-10">
+                    <div class="flex xl:flex-row flex-col justify-between items-start xl:gap-[246px] gap-10">
+                        <div class="md:w-408 w-full">
+                            <a href="index.html">
+                                <img src="assets/img/logo.svg" alt="">
+                            </a>
+                            <p class="font-Geist font-normal text-base leading-6 text-secondaryColor pt-6">Explore top-rated properties in your desired location — homes, apartments, and commercial spaces tailored for your lifestyle.</p>
+                        
+                            <div class="flex gap-3 mt-6">
+                                <a href="https://www.facebook.com/" target="_blank" class="group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M21.4758 18.8746L21.8908 16.341H19.2968V14.6969C19.2968 14.0039 19.659 13.3279 20.8209 13.3279H22V11.1711C22 11.1711 20.9301 11 19.9069 11C17.7708 11 16.3746 12.2136 16.3746 14.4103V16.3414H14V18.875H16.3746V25H19.2968V18.875L21.4758 18.8746Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M18.0001 11C16.099 11 15.8606 11.0081 15.114 11.0421C14.3689 11.0761 13.86 11.1945 13.4148 11.3675C12.9544 11.5464 12.5641 11.7857 12.1749 12.1749C11.7857 12.564 11.5464 12.9545 11.3675 13.4148C11.1944 13.86 11.0761 14.3689 11.0421 15.114C11.008 15.8606 11 16.099 11 18.0001C11 19.9012 11.008 20.1396 11.0421 20.8863C11.0761 21.6313 11.1944 22.1402 11.3675 22.5854C11.5464 23.0458 11.7858 23.4361 12.1749 23.8253C12.5641 24.2145 12.9544 24.4539 13.4148 24.6328C13.86 24.8058 14.3689 24.9241 15.114 24.9581C15.8606 24.9922 16.099 25.0002 18.0001 25.0002C19.9012 25.0002 20.1396 24.9922 20.8863 24.9581C21.6313 24.9241 22.1402 24.8058 22.5854 24.6328C23.0458 24.4539 23.4361 24.2145 23.8253 23.8253C24.2145 23.4361 24.4539 23.0458 24.6328 22.5854C24.8058 22.1402 24.9241 21.6313 24.9581 20.8863C24.9922 20.1396 25.0002 19.9012 25.0002 18.0001C25.0002 16.099 24.9922 15.8606 24.9581 15.114C24.9241 14.3689 24.8058 13.86 24.6328 13.4148C24.4539 12.9545 24.2145 12.564 23.8253 12.1749C23.4361 11.7857 23.0458 11.5464 22.5854 11.3675C22.1402 11.1945 21.6313 11.0761 20.8863 11.0421C20.1396 11.0081 19.9012 11 18.0001 11ZM18.0001 12.2613C19.8692 12.2613 20.0906 12.2684 20.8288 12.3021C21.5113 12.3332 21.8819 12.4473 22.1286 12.5431C22.4553 12.6701 22.6885 12.8218 22.9335 13.0667C23.1784 13.3117 23.3301 13.5449 23.4571 13.8716C23.553 14.1183 23.667 14.489 23.6981 15.1715C23.7318 15.9096 23.739 16.131 23.739 18.0001C23.739 19.8692 23.7318 20.0906 23.6981 20.8288C23.667 21.5113 23.553 21.8819 23.4571 22.1286C23.3301 22.4553 23.1784 22.6885 22.9335 22.9335C22.6885 23.1784 22.4553 23.3301 22.1286 23.4571C21.8819 23.553 21.5113 23.667 20.8288 23.6981C20.0907 23.7318 19.8694 23.739 18.0001 23.739C16.1309 23.739 15.9095 23.7318 15.1715 23.6981C14.4889 23.667 14.1183 23.553 13.8717 23.4571C13.5449 23.3301 13.3117 23.1784 13.0668 22.9335C12.8218 22.6885 12.6701 22.4553 12.5431 22.1286C12.4473 21.8819 12.3332 21.5113 12.3021 20.8288C12.2684 20.0906 12.2613 19.8692 12.2613 18.0001C12.2613 16.131 12.2684 15.9096 12.3021 15.1715C12.3332 14.4889 12.4473 14.1183 12.5431 13.8717C12.6701 13.5449 12.8218 13.3117 13.0667 13.0668C13.3117 12.8218 13.5449 12.6701 13.8716 12.5431C14.1183 12.4473 14.489 12.3332 15.1715 12.3021C15.9096 12.2684 16.131 12.2613 18.0001 12.2613" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                        <path d="M18.0004 20.3339C16.7117 20.3339 15.667 19.2892 15.667 18.0006C15.667 16.7118 16.7117 15.6672 18.0004 15.6672C19.2891 15.6672 20.3338 16.7118 20.3338 18.0006C20.3338 19.2892 19.2891 20.3339 18.0004 20.3339ZM18.0004 14.4059C16.0151 14.4059 14.4058 16.0152 14.4058 18.0006C14.4058 19.9858 16.0151 21.5952 18.0004 21.5952C19.9857 21.5952 21.5951 19.9858 21.5951 18.0006C21.5951 16.0152 19.9857 14.4059 18.0004 14.4059ZM22.5771 14.2639C22.5771 14.7278 22.201 15.1039 21.7371 15.1039C21.2732 15.1039 20.8971 14.7278 20.8971 14.2639C20.8971 13.7999 21.2732 13.4238 21.7371 13.4238C22.201 13.4238 22.5771 13.7999 22.5771 14.2639Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M25 13.4205C24.4758 13.6655 23.9197 13.8263 23.3503 13.8975C23.9434 13.5226 24.3988 12.9289 24.6132 12.2215C24.0494 12.5744 23.4326 12.823 22.7893 12.9567C22.2654 12.3679 21.5189 12 20.6928 12C19.1065 12 17.8204 13.3564 17.8204 15.0293C17.8204 15.2668 17.8458 15.498 17.8948 15.7198C15.5077 15.5934 13.3913 14.3874 11.9746 12.5545C11.7274 13.002 11.5858 13.5224 11.5858 14.0775C11.5858 15.1285 12.0929 16.0557 12.8635 16.599C12.4074 16.584 11.9613 16.454 11.5625 16.2201C11.5624 16.2328 11.5624 16.2454 11.5624 16.2582C11.5624 17.726 12.5524 18.9504 13.8663 19.2287C13.4434 19.35 12.9997 19.3678 12.5693 19.2806C12.9347 20.4841 13.9955 21.3599 15.2523 21.3845C14.2693 22.1969 13.0308 22.6813 11.6852 22.6813C11.4533 22.6813 11.2247 22.6669 11 22.6389C12.2711 23.4985 13.7809 24 15.4029 24C20.6861 24 23.5751 19.3838 23.5751 15.3807C23.5751 15.2493 23.5723 15.1186 23.5668 14.9887C24.1291 14.56 24.6144 14.0289 25 13.4205Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                    
+                                </a>
+                                <a href="https://www.linkedin.com/" target="_blank" class="block group">
+                                    <svg class="rounded-xl bg-white border border-borderColor group-hover:bg-greenColor group-hover:transition group-hover:ease-in-out group-hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2003 15.8783H18.8001V17.1733C19.1746 16.4285 20.135 15.7593 21.5777 15.7593C24.3434 15.7593 25 17.2419 25 19.9621V25H22.2V20.5816C22.2 19.0325 21.8255 18.1589 20.8721 18.1589C19.5498 18.1589 19.0003 19.1004 19.0003 20.5809V25H16.2003V15.8783ZM11.399 24.881H14.199V15.7593H11.399V24.881ZM14.6001 12.785C14.6002 13.0197 14.5537 13.2521 14.4632 13.4686C14.3727 13.6852 14.2401 13.8816 14.073 14.0464C13.7345 14.3828 13.2763 14.5712 12.799 14.57C12.3226 14.5697 11.8654 14.3818 11.5264 14.0471C11.3599 13.8817 11.2278 13.6851 11.1374 13.4685C11.0471 13.2519 11.0004 13.0197 11 12.785C11 12.3111 11.189 11.8575 11.5271 11.5229C11.8658 11.1877 12.3232 10.9998 12.7997 11C13.2771 11 13.7349 11.1883 14.073 11.5229C14.4104 11.8575 14.6001 12.3111 14.6001 12.785Z" fill="black" class="group-hover:fill-white group-hover:transition group-hover:ease-in-out group-hover:duration-500"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="xl:w-626 w-full flex md:flex-row flex-col justify-between xl:gap-20 gap-10">
+                            <div class="w-auto">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Quick links</h4>
+                                <ul class="mt-6">
+                                    <li><a href="index.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Home</a></li>
+                                    <li class="pt-4"><a href="about.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">About Us</a></li>
+                                    <li class="pt-4"><a href="listings.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Listings</a></li>
+                                    <li class="pt-4"><a href="blog.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Blog</a></li>
+                                    <li class="pt-4"><a href="contact.html" class="font-Geist font-normal text-secondaryColor text-base leading-6">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="w-auto">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Top category</h4>
+                                <ul class="mt-6">
+                                    <li><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Apartments</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Villas</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Commercial spaces</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Plots & land</a></li>
+                                    <li class="pt-4"><a href="#" class="font-Geist font-normal text-secondaryColor text-base leading-6">Luxury homes</a></li>
+                                </ul>
+                            </div>
+                            <div class="xl:w-[207px] md:w-[290px] w-full">
+                                <h4 class="font-Geist font-normal text-24xl leading-32 text-primaryColor tracking-[-0.03em]">Top category</h4>
+                                <p class="pt-6 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Address: </span>123 Property Ave, Dream City, LC 56789, United States</p>
+                                <p class="pt-4 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Email: </span>info@demoemail.com</p>
+                                <p class="pt-4 font-Geist font-normal text-secondaryColor text-base leading-6"><span class="text-primaryColor">Phone: </span>+1 (800) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        data-aos="zoom-in"
+                    data-aos-duration="1000"
+                    data-aos-offset="20"
+                    data-aos-once="true"
+                    class="py-7">
+                        <img class="w-full" src="assets/img/footer-logo.svg" alt="">
+                    </div>
+
+                    <hr class="border-t border-borderColor"/>
+                    <div class="flex md:flex-row flex-col-reverse justify-between items-center py-7 md:gap-0 gap-5">
+                        <p class="font-Geist font-normal text-base leading-6 text-secondaryColor">&copy; 2025 company all rights reserved.</p>
+                        <div class="flex gap-7">
+                            <a href="#" class="font-Geist font-normal text-base leading-6 text-secondaryColor">Terms & conditions</a>
+                            <a href="#" class="font-Geist font-normal text-base leading-6 text-secondaryColor">Privacy policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End Here -->
+
+    <script src="assets/js/alpine.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/aos_script.js"></script>
+
+    <script>
+        // JavaScript for slider functionality
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    
+
+    let images = [
+        'assets/img/listingPage/img-1.png',
+        'assets/img/listingPage/img-6.png',
+        'assets/img/listingPage/img-7.png',
+        'assets/img/listingPage/img-8.png'
+    ];
+
+    let currentIndex = 0;
+
+    function updateMainImage(index) {
+        mainImage.src = images[index];
+    }
+
+    // Thumbnail click
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+        currentIndex = index;
+        updateMainImage(currentIndex);
+        });
+    });
+
+    // Next and Prev buttons
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateMainImage(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateMainImage(currentIndex);
+    });
+    </script>
+</body>
+</html>
